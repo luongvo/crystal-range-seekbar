@@ -6,8 +6,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
-
 
 import com.crystal.crystalrangeseekbar.R;
 import com.crystal.crystalrangeseekbar.adapters.RangeSeekbarPagerAdapter;
@@ -22,9 +20,9 @@ import java.util.List;
  */
 public class RangeSlider extends AppCompatActivity {
 
-    static {
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-    }
+//    static {
+//        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+//    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,5 +59,6 @@ public class RangeSlider extends AppCompatActivity {
 
         // set view pager to tab layout
         tabLayout.setupWithViewPager(viewPager);
+        viewPager.setCurrentItem(1);
     }
 }

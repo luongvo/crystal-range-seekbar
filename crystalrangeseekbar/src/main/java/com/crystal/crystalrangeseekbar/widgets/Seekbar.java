@@ -1,9 +1,11 @@
 package com.crystal.crystalrangeseekbar.widgets;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -32,12 +34,20 @@ abstract class Seekbar extends View {
 
     public Seekbar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
+        // Init Shadow
+//        if (attributes.getBoolean(R.styleable.CircularImageView_civ_shadow, false)) {
+//            shadowRadius = DEFAULT_SHADOW_RADIUS;
+//            drawShadow(attributes.getFloat(R.styleable.CircularImageView_civ_shadow_radius, shadowRadius), attributes.getColor(R.styleable.CircularImageView_civ_shadow_color, shadowColor));
+        paintBorder = new Paint();
+        paintBorder.setAntiAlias(true);
+        paintBorder.setColor(Color.RED);
+
+        drawShadow(shadowRadius, Color.parseColor("#6f6f6f"));
+//        }
     }
 
-    public Seekbar(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
-
+    @SuppressLint("NewApi")
     protected static Bitmap getBitmap(Drawable drawable) {
         if (drawable != null) {
             if (drawable instanceof BitmapDrawable) {
@@ -86,5 +96,34 @@ abstract class Seekbar extends View {
         retCanvas.drawBitmap(bm, scaleToFit, null);
         mask.recycle();
         return ret;
+
+//        Paint shadowPaint = new Paint();
+//        shadowPaint.setAntiAlias(true);
+//        shadowPaint.setColor(Color.WHITE);
+//        shadowPaint.setTextSize(45.0f);
+//        shadowPaint.setStrokeWidth(2.0f);
+//        shadowPaint.setStyle(Paint.Style.STROKE);
+//        shadowPaint.setShadowLayer(5.0f, 10.0f, 10.0f, Color.BLACK);
+//        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+//
+//        final Bitmap ret = Bitmap.createBitmap(dstWidth + 50, dstHeight + 50, Bitmap.Config.ARGB_8888);
+//        final Canvas canvas = new Canvas(ret);
+////        canvas.drawText("http://android-er.blogspot.com/", 10, 10, shadowPaint);
+//        canvas.drawBitmap(bm, 10, 10, shadowPaint);
+//
+//        return ret;
+    }
+
+    protected Paint paintBorder;
+    protected int shadowRadius = 20;
+
+    protected void drawShadow(float shadowRadius, int shadowColor) {
+//        this.shadowRadius = shadowRadius;
+//        this.shadowColor = shadowColor;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+            setLayerType(LAYER_TYPE_SOFTWARE, paintBorder);
+        }
+        paintBorder.setShadowLayer(shadowRadius, 0.0f, shadowRadius / 2, shadowColor);
+
     }
 }

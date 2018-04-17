@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,11 +12,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:paddingBottom="20dp"
-            android:clipChildren="false">
+            android:layout_marginStart="10dp"
+            android:clipChildren="false"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
 
             <!-- seekbar option 1 -->
             <RelativeLayout
@@ -28,30 +28,34 @@
                 <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
                     android:id="@+id/rangeSeekbar1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    app:left_thumb_image="@drawable/ic_slider"
+                    app:left_thumb_image_pressed="@drawable/ic_slider"
+                    app:right_thumb_image="@drawable/ic_slider"
+                    app:right_thumb_image_pressed="@drawable/ic_slider" />
 
                 <TextView
                     android:id="@+id/textMin1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/rangeSeekbar1"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000"/>
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/rangeSeekbar1"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true"/>
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -66,39 +70,39 @@
                     android:id="@+id/rangeSeekbar2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:corner_radius="10"
-                    app:min_value="50"
-                    app:max_value="150"
                     app:bar_color="#C69E89"
                     app:bar_highlight_color="#A54B17"
+                    app:corner_radius="10"
+                    app:data_type="_integer"
                     app:left_thumb_color="#775E4F"
-                    app:right_thumb_color="#775E4F"
                     app:left_thumb_color_pressed="#4C2D1A"
-                    app:right_thumb_color_pressed="#4C2D1A"
-                    app:data_type="_integer"/>
+                    app:max_value="150"
+                    app:min_value="50"
+                    app:right_thumb_color="#775E4F"
+                    app:right_thumb_color_pressed="#4C2D1A" />
 
                 <TextView
                     android:id="@+id/textMin2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/rangeSeekbar2"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000"/>
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/rangeSeekbar2"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true"/>
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -112,40 +116,40 @@
                     android:id="@+id/rangeSeekbar3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:corner_radius="10"
-                    app:min_value="50"
-                    app:max_value="100"
-                    app:gap="20"
                     app:bar_color="#8990C4"
                     app:bar_highlight_color="#2434AD"
+                    app:corner_radius="10"
+                    app:data_type="_integer"
+                    app:gap="20"
                     app:left_thumb_color="#1A246D"
-                    app:right_thumb_color="#1A246D"
                     app:left_thumb_color_pressed="#030B47"
-                    app:right_thumb_color_pressed="#030B47"
-                    app:data_type="_integer"/>
+                    app:max_value="100"
+                    app:min_value="50"
+                    app:right_thumb_color="#1A246D"
+                    app:right_thumb_color_pressed="#030B47" />
 
                 <TextView
                     android:id="@+id/textMin3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/rangeSeekbar3"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000"/>
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/rangeSeekbar3"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true"/>
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -159,40 +163,40 @@
                     android:id="@+id/rangeSeekbar4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:corner_radius="10"
-                    app:min_value="0"
-                    app:max_value="100"
-                    app:fix_gap="30"
                     app:bar_color="#EE88F7"
                     app:bar_highlight_color="#D810EA"
+                    app:corner_radius="10"
+                    app:data_type="_integer"
+                    app:fix_gap="30"
                     app:left_thumb_color="#8D0D99"
-                    app:right_thumb_color="#8D0D99"
                     app:left_thumb_color_pressed="#56005E"
-                    app:right_thumb_color_pressed="#56005E"
-                    app:data_type="_integer"/>
+                    app:max_value="100"
+                    app:min_value="0"
+                    app:right_thumb_color="#8D0D99"
+                    app:right_thumb_color_pressed="#56005E" />
 
                 <TextView
                     android:id="@+id/textMin4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/rangeSeekbar4"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000"/>
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/rangeSeekbar4"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true"/>
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -207,40 +211,40 @@
                     android:id="@+id/rangeSeekbar5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:corner_radius="10"
-                    app:min_value="0"
-                    app:max_value="100"
-                    app:steps="5"
                     app:bar_color="#F7BB88"
                     app:bar_highlight_color="#E07416"
+                    app:corner_radius="10"
+                    app:data_type="_integer"
                     app:left_thumb_image="@drawable/thumb"
-                    app:right_thumb_image="@drawable/thumb"
                     app:left_thumb_image_pressed="@drawable/thumb_pressed"
+                    app:max_value="100"
+                    app:min_value="0"
+                    app:right_thumb_image="@drawable/thumb"
                     app:right_thumb_image_pressed="@drawable/thumb_pressed"
-                    app:data_type="_integer"/>
+                    app:steps="5" />
 
                 <TextView
                     android:id="@+id/textMin5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/rangeSeekbar5"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000"/>
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/rangeSeekbar5"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true"/>
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -254,31 +258,31 @@
                     android:id="@+id/rangeSeekbar6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:min_value="100"
-                    app:max_value="500"/>
+                    app:max_value="500"
+                    app:min_value="100" />
 
                 <TextView
                     android:id="@+id/textMin6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/rangeSeekbar6"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000"/>
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/rangeSeekbar6"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true"/>
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -299,24 +303,24 @@
                     android:id="@+id/textMin7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/contRangeSeekbar7"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000"/>
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/contRangeSeekbar7"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true"/>
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -329,30 +333,30 @@
                 <com.crystal.crystalrangeseekbar.widgets.MyRangeSeekbar
                     android:id="@+id/rangeSeekbar8"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/textMin8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/rangeSeekbar8"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000"/>
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/rangeSeekbar8"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true"/>
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -366,39 +370,39 @@
                     android:id="@+id/rangeSeekbar9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:corner_radius="10"
-                    app:min_value="0"
-                    app:max_value="100"
                     app:bar_color_mode="gradient"
-                    app:bar_gradient_start="#EE88F7"
                     app:bar_gradient_end="#29CBCC"
+                    app:bar_gradient_start="#EE88F7"
                     app:bar_highlight_color_mode="gradient"
                     app:bar_highlight_gradient_end="#D810EA"
-                    app:bar_highlight_gradient_start  ="#0FCC44"
-                    app:data_type="_integer"/>
+                    app:bar_highlight_gradient_start="#0FCC44"
+                    app:corner_radius="10"
+                    app:data_type="_integer"
+                    app:max_value="100"
+                    app:min_value="0" />
 
                 <TextView
                     android:id="@+id/textMin9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/rangeSeekbar9"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000"/>
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/rangeSeekbar9"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true"/>
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -413,40 +417,40 @@
                     android:id="@+id/rangeSeekbar10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:corner_radius="10"
-                    app:min_value="0"
-                    app:max_value="100"
-                    app:steps="5"
                     app:bar_color="#F7BB88"
                     app:bar_highlight_color="#E07416"
+                    app:corner_radius="10"
+                    app:data_type="_integer"
                     app:left_thumb_image="@drawable/ic_seek_bar"
-                    app:right_thumb_image="@drawable/ic_seek_bar"
                     app:left_thumb_image_pressed="@drawable/ic_seek_bar"
+                    app:max_value="100"
+                    app:min_value="0"
+                    app:right_thumb_image="@drawable/ic_seek_bar"
                     app:right_thumb_image_pressed="@drawable/ic_seek_bar"
-                    app:data_type="_integer" />
+                    app:steps="5" />
 
                 <TextView
                     android:id="@+id/textMin10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:layout_below="@id/rangeSeekbar10"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="10dp"
-                    android:textSize="16dp"
-                    android:textColor="#000" />
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textMax10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_alignParentRight="true"
                     android:layout_below="@id/rangeSeekbar10"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
                     android:textColor="#000"
-                    android:layout_alignParentRight="true" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 

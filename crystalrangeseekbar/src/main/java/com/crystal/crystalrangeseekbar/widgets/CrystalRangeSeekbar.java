@@ -741,8 +741,30 @@ public class CrystalRangeSeekbar extends Seekbar {
         rectLeftThumb.bottom = thumbHeight;
 
         if(leftThumb != null){
-            Bitmap lThumb = (Thumb.MIN.equals(pressedThumb)) ? leftThumbPressed : leftThumb;
-            drawLeftThumbWithImage(canvas, paint, rectLeftThumb, lThumb);
+            Bitmap thumb = (Thumb.MIN.equals(pressedThumb)) ? leftThumbPressed : leftThumb;
+//            thumb = addShadow(thumb, thumb.getHeight(), thumb.getWidth(),
+//                    Color.parseColor("#4A4A4A"), 3, 1, 3);
+//            thumb = ShadowGenerator.getInstance(getContext()).recreateIcon(thumb);
+
+
+//            int canvasSize=0;
+//            int borderWidth=0;
+//            if (!isInEditMode()) {
+//                canvasSize = canvas.getWidth();
+//                if (canvas.getHeight() < canvasSize) {
+//                    canvasSize = canvas.getHeight();
+//                }
+//            }
+
+            // circleCenter is the x or y of the view's center
+            // radius is the radius in pixels of the cirle to be drawn
+            // paint contains the shader that will texture the shape
+//            int circleCenter = (int) (canvasSize - (borderWidth * 2)) / 2;
+
+//            canvas.drawBitmap(thumb,circleCenter + borderWidth, circleCenter + borderWidth, paintBorder);
+
+
+            drawLeftThumbWithImage(canvas, paint, rectLeftThumb, thumb);
         }
         else{
             drawLeftThumbWithColor(canvas, paint, rectLeftThumb);
@@ -754,7 +776,10 @@ public class CrystalRangeSeekbar extends Seekbar {
     }
 
     protected void drawLeftThumbWithImage(final Canvas canvas, final Paint paint, final RectF rect, final Bitmap image){
-        canvas.drawBitmap(image, rect.left, rect.top, paint);
+        float radius = thumbHeight / 2;
+        canvas.drawCircle(rect.left + radius, rect.top + radius + shadowRadius, radius, paintBorder);
+
+        canvas.drawBitmap(image, rect.left, rect.top + shadowRadius, paint);
     }
 
     protected void setupRightThumb(final Canvas canvas, final Paint paint, final RectF rect){
@@ -770,8 +795,8 @@ public class CrystalRangeSeekbar extends Seekbar {
         rectRightThumb.bottom = thumbHeight;
 
         if(rightThumb != null){
-            Bitmap rThumb = (Thumb.MAX.equals(pressedThumb)) ? rightThumbPressed : rightThumb;
-            drawRightThumbWithImage(canvas, paint, rectRightThumb, rThumb);
+            Bitmap thumb = (Thumb.MAX.equals(pressedThumb)) ? rightThumbPressed : rightThumb;
+            drawRightThumbWithImage(canvas, paint, rectRightThumb, thumb);
         }
         else{
             drawRightThumbWithColor(canvas, paint, rectRightThumb);
@@ -783,7 +808,10 @@ public class CrystalRangeSeekbar extends Seekbar {
     }
 
     protected void drawRightThumbWithImage(final Canvas canvas, final Paint paint, final RectF rect, final Bitmap image){
-        canvas.drawBitmap(image, rect.left, rect.top, paint);
+        float radius = thumbHeight / 2;
+        canvas.drawCircle(rect.left + radius, rect.top + radius + shadowRadius, radius, paintBorder);
+
+        canvas.drawBitmap(image, rect.left, rect.top + shadowRadius, paint);
     }
 
     protected void trackTouchEvent(MotionEvent event){
@@ -821,7 +849,7 @@ public class CrystalRangeSeekbar extends Seekbar {
     }
 
     protected int getMeasureSpecHeight(int heightMeasureSpec){
-        int height = Math.round(thumbHeight);
+        int height = Math.round(thumbHeight + 2 * shadowRadius);
         if (MeasureSpec.UNSPECIFIED != MeasureSpec.getMode(heightMeasureSpec)) {
             height = Math.min(height, MeasureSpec.getSize(heightMeasureSpec));
         }

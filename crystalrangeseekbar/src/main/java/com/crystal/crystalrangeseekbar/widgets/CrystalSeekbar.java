@@ -673,8 +673,10 @@ public class CrystalSeekbar extends Seekbar {
         rectThumb.bottom = thumbHeight;
 
         if (thumb != null) {
-            Bitmap lThumb = (Thumb.MIN.equals(pressedThumb)) ? thumbPressed : thumb;
-            drawLeftThumbWithImage(canvas, paint, rectThumb, lThumb);
+            Bitmap thumb = (Thumb.MIN.equals(pressedThumb)) ? thumbPressed : this.thumb;
+//            thumb = addShadow(thumb, thumb.getHeight(), thumb.getWidth(),
+//                    Color.parseColor("#4A4A4A"), 30, 0, 10);
+            drawLeftThumbWithImage(canvas, paint, rectThumb, thumb);
         } else {
             drawLeftThumbWithColor(canvas, paint, rectThumb);
         }

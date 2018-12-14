@@ -1,8 +1,5 @@
-[ ![Download](https://api.bintray.com/packages/syedowaisali/maven/crystalrangeseekbar/images/download.svg) ](https://bintray.com/syedowaisali/maven/crystalrangeseekbar/_latestVersion) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Crystal%20Range%20Seekbar-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3996) [![Coding Signals](https://img.shields.io/badge/Coding%20Signals-Crystal%20Range%20Seekbar-orange.svg)](http://codingsignals.com/crystal-range-seekbar-in-android/)
-
-
-
 # Crystal Range Seekbar
+[![](https://jitpack.io/v/luongvo/crystal-range-seekbar.svg)](https://jitpack.io/#luongvo/crystal-range-seekbar)
 
 An extended version of seekbar and range seekbar with basic and advanced customization.
 
@@ -12,7 +9,7 @@ An extended version of seekbar and range seekbar with basic and advanced customi
 Add a dependency to your `build.gradle`:
 ```groovy
 dependencies {
-    compile 'com.crystal:crystalrangeseekbar:1.1.3'
+    implementation 'com.github.luongvo:crystal-range-seekbar:[LATEST_VERSION]'
 }
 ```
 
@@ -338,20 +335,6 @@ __Available attributes__
 + ``position`` can be ``left`` or ``right``, default ``left``
 + ``data_type`` can be ``_long`` or ``_double`` or ``_integer`` or ``_float`` or ``_short`` or ``_byte``, default ``_integer``
 
-## Changelog
-
-##### 1.1.2 - 24-Aug-2016
-- Bug fixed when update property programmatically.
-
-##### 1.1.1 - 21-Aug-2016
-- Added new feature. ```OnRangeSeekbarFinalValueListener, OnSeekbarFinalValueListener```.
-
-##### 1.0.1 - 9-Aug-2016
-- Bug fixed setMinStartValue and setMaxStartValue programmatically.
-
-##### 1.0.0 - 17-July-2016
-- Add New Project.
-
 # LICENSE
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -365,8 +348,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
-##Authors
-
-* [Syed Owais Ali](https://github.com/syedowaisali) *original Author*
-* [Balazs Rozsenich](https://github.com/m3dw3)
